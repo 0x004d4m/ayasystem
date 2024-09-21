@@ -37,7 +37,7 @@ class FinancialStatementCrudController extends CrudController
             'type' => "select",
             'name' => 'bank_card_id',
             'entity' => 'bankCard',
-            'attribute' => "name",
+            'attribute' => "iban_number",
             'model' => 'App\Models\BankCard'
         ]);
         $this->crud->setColumnDetails('bank_card_id', [
@@ -45,7 +45,7 @@ class FinancialStatementCrudController extends CrudController
             'type' => "select",
             'name' => 'bank_card_id',
             'entity' => 'bankCard',
-            'attribute' => "name",
+            'attribute' => "iban_number",
             'model' => 'App\Models\BankCard'
         ]);
     }
@@ -59,7 +59,7 @@ class FinancialStatementCrudController extends CrudController
             'type' => "select",
             'name' => 'bank_card_id',
             'entity' => 'bankCard',
-            'attribute' => "name",
+            'attribute' => "iban_number",
             'model' => 'App\Models\BankCard'
         ]);
     }
