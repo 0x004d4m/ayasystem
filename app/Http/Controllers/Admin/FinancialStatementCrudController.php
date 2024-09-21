@@ -51,7 +51,7 @@ class FinancialStatementCrudController extends CrudController
 
         $this->crud->setColumnDetails('proof', [
             'name'   => 'proof',
-            'type'   => 'link',
+            'type'   => 'url',
             'label'  => 'Proof',
         ]);
     }
