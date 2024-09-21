@@ -19,10 +19,16 @@ class FinancialStatement extends Model
         'request_date',
         'payment_date',
         'is_paid',
+        'proof',
     ];
 
     public function bankCard()
     {
         return $this->belongsTo(BankCard::class);
+    }
+
+    public function getProofAttribute($val)
+    {
+        return url('storage/' . $val);
     }
 }

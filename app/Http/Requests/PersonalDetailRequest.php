@@ -30,6 +30,7 @@ class PersonalDetailRequest extends FormRequest
             'salary' => 'required',
             'work_hours' => 'required',
             'is_part_time' => 'required',
+            'proof' => 'sometimes',
         ];
     }
 

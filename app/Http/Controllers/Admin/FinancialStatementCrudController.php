@@ -48,6 +48,12 @@ class FinancialStatementCrudController extends CrudController
             'attribute' => "iban_number",
             'model' => 'App\Models\BankCard'
         ]);
+
+        $this->crud->setColumnDetails('proof', [
+            'name'   => 'proof',
+            'type'   => 'link',
+            'label'  => 'Proof',
+        ]);
     }
 
     protected function setupCreateOperation()
@@ -61,6 +67,12 @@ class FinancialStatementCrudController extends CrudController
             'entity' => 'bankCard',
             'attribute' => "iban_number",
             'model' => 'App\Models\BankCard'
+        ]);
+        $this->crud->field([
+            'name'   => 'proof',
+            'type'   => 'upload',
+            'label'  => 'Proof',
+            'withFiles' => true
         ]);
     }
 
