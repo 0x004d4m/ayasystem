@@ -29,6 +29,10 @@ class FinancialStatement extends Model
 
     public function getProofAttribute($val)
     {
-        return url('storage/' . $val);
+        if($val){
+            return url('storage/' . $val);
+        }else{
+            return null;
+        }
     }
 }
