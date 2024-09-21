@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\TaskRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
-class TaskCrudController extends CrudController
+class FinishedTaskCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     public function setup()
@@ -24,8 +20,8 @@ class TaskCrudController extends CrudController
             $this->crud->denyAccess(['create', 'delete', 'update']);
         }
         CRUD::setModel(\App\Models\Task::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/task');
-        CRUD::setEntityNameStrings('task', 'tasks');
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/finished-task');
+        CRUD::setEntityNameStrings('finished task', 'finished tasks');
     }
 
     protected function setupListOperation()
@@ -54,26 +50,7 @@ class TaskCrudController extends CrudController
             'model' => 'App\Models\User'
         ]);
 
-        $this->crud->addClause('where', 'is_finished', false);
-    }
-
-    protected function setupCreateOperation()
-    {
-        CRUD::setValidation(TaskRequest::class);
-        CRUD::setFromDb();
-        $this->crud->addField([
-            'label' => "User",
-            'type' => "select",
-            'name' => 'user_id',
-            'entity' => 'user',
-            'attribute' => "name",
-            'model' => 'App\Models\User'
-        ]);
-    }
-
-    protected function setupUpdateOperation()
-    {
-        $this->setupCreateOperation();
+        $this->crud->addClause('where', 'is_finished', true);
     }
 
     protected function setupShowOperation()
