@@ -31,6 +31,11 @@ class TaskCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb();
+        $this->crud->setColumnDetails('name', [
+            'label' => "Name",
+            'type' => "url",
+            'name' => 'name',
+        ]);
 
         $this->crud->addColumn('user_id', [
             'label' => "User",
