@@ -52,6 +52,6 @@ class NoteCrudController extends CrudController
     {
         $this->setupListOperation();
 
-        CRUD::field('note');
+        CRUD::column('note');
     }
 }
