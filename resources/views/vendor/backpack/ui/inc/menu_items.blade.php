@@ -7,7 +7,7 @@
 <x-backpack::menu-item title="Bank cards" icon="la la-credit-card" :link="backpack_url('bank-card')" />
 <x-backpack::menu-item title="Tasks" icon="la la-list-ul" :link="backpack_url('task')" />
 <x-backpack::menu-item title="Finished tasks" icon="la la-list-alt" :link="backpack_url('finished-task')" />
-<x-backpack::menu-item title="Notes" icon="la la-question" :link="backpack_url('note')" />
+<x-backpack::menu-item title="Notes" icon="las la-sticky-note" :link="backpack_url('note')" />
 <x-backpack::menu-item title="Financial statements" icon="la la-file-invoice-dollar" :link="backpack_url('financial-statement')" />
 @if (backpack_user()->can('Edit'))
     <x-backpack::menu-item title="Emails" icon="la la-envelope" :link="backpack_url('email')" />
