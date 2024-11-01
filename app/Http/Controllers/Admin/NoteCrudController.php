@@ -53,10 +53,12 @@ class NoteCrudController extends CrudController
         $this->setupListOperation();
 
         CRUD::addColumn([
-            'name' => 'note',
-            'label' => 'Note',
-            'type' => 'model_function',
-            'function_name' => 'getParsedContent',
+            'name' => 'note',           // the database column
+            'label' => 'Note',          // label to display
+            'type' => 'custom_html',       // allows custom HTML rendering
+            'value' => function ($entry) {
+                return $entry->note;    // output raw HTML with {!! !!} equivalent
+            },
         ]);
     }
 }
