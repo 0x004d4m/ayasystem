@@ -22,6 +22,7 @@ Route::group([
     Route::crud('email', 'EmailCrudController');
     Route::crud('personal-detail', 'PersonalDetailCrudController');
     Route::crud('finished-task', 'FinishedTaskCrudController');
+    Route::crud('note', 'NoteCrudController');
 }); // this should be the absolute last line of this file
 
 /**

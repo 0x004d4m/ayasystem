@@ -11,3 +11,4 @@
 @if (backpack_user()->can('Edit'))
     <x-backpack::menu-item title="Emails" icon="la la-envelope" :link="backpack_url('email')" />
 @endif
+<x-backpack::menu-item title="Notes" icon="la la-question" :link="backpack_url('note')" />
