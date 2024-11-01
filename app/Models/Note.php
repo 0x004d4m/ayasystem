@@ -15,4 +15,10 @@ class Note extends Model
 
     protected $table = 'notes';
     protected $fillable = ['title', 'note'];
+
+    // In your model:
+    public function getParsedContent()
+    {
+        return $this->note; // This should return HTML content directly.
+    }
 }

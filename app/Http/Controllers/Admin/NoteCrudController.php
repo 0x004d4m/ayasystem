@@ -52,6 +52,11 @@ class NoteCrudController extends CrudController
     {
         $this->setupListOperation();
 
-        CRUD::column('note')->type('html');
+        CRUD::addColumn([
+            'name' => 'note',
+            'label' => 'Note',
+            'type' => 'model_function',
+            'function_name' => 'getParsedContent',
+        ]);
     }
 }
