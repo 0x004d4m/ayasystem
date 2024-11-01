@@ -51,5 +51,7 @@ class NoteCrudController extends CrudController
     protected function setupShowOperation()
     {
         $this->setupListOperation();
+
+        CRUD::field('note');
     }
 }
