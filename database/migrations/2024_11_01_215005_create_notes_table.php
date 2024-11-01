@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->json('note')->nullable();
+            $table->string('title');
+            $table->text('note');
             $table->timestamps();
             $table->softDeletes();
         });
